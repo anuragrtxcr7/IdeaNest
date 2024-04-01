@@ -1,8 +1,7 @@
 import React from "react";
 import appwriteService from "../Appwrite/config";
 import { Link } from "react-router-dom";
-import parse from "html-react-parser";
-const PostCard = ({ $id, title, featuredImage, username, content }) => {
+const PostCard = ({ $id, title, featuredImage, username }) => {
   return (
     <Link to={`/post/${$id}`}>
       <span className="block relative h-48 rounded overflow-hidden">
@@ -19,9 +18,6 @@ const PostCard = ({ $id, title, featuredImage, username, content }) => {
         <h2 className="text-black title-font flex flex-wrap justify-center text-lg font-medium line-clamp-2">
           {title}
         </h2>
-        <div className="mt-1 text-md mb-2 flex flex-wrap justify-center leading-5 text-gray-600 line-clamp-2">
-          {parse(content)}
-        </div>
       </div>
     </Link>
   );
